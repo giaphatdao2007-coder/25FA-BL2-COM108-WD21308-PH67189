@@ -1,10 +1,37 @@
-
+﻿
 #include <stdio.h>
-
+#include <math.h>
 void kiemTraSoNguyen()
 {
-	printf("Kiem Tra So Nguyen");
-}
+		int x;
+		printf("Nhap so nguyen x: ");
+		scanf("%d", &x);
+
+		// 1. X luôn là số nguyên vì dùng scanf("%d")
+		printf("%d la so nguyen.\n", x);
+
+		// 2. Kiem tra so nguyen to
+		int dem = 0;
+		for (int i = 1; i <= x; i++) {
+			if (x % i == 0) {
+				dem++;
+			}
+		}
+
+		if (x >= 2 && dem == 2)
+			printf("%d la so nguyen to.\n", x);
+		else
+			printf("%d KHONG la so nguyen to.\n", x);
+
+		// 3. Kiem tra so chinh phuong
+		int a = sqrt(x);//square root
+		if (a * a == x)
+			printf("%d la so chinh phuong.\n", x);
+		else
+			printf("%d khong phai la so chinh phuong.\n", x);
+
+		return 0;
+	}
 
 void uocChungBoiChung()
 {
