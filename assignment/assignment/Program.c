@@ -1,24 +1,61 @@
-// CConsoleApplication.c : file nay chua 'main' function. 
-// Chuong trinh phan mem Bat dau thuc thi & Ket thuc o day.
 
 #include <stdio.h>
 
-int main()
+void kiemTraSoNguyen()
 {
-    printf("Hi there!\n");
+	printf("Kiem Tra So Nguyen");
 }
 
-// Debug/Run chuong trinh: bam "F5" hoac "Debug > Start Debugging" tren menu
+void uocChungBoiChung()
+{
+	printf("Uoc Chung Boi Chung");
+}
 
-// Danh cho nguoi moi bat dau:
-//   1. Dung "Solution Explorer window" de them/quan ly cac files
-//   2. Dung "Output window" de kiem tra "build output" va "cac thong bao khac"
-//   3. Dung "Error List window" de xem loi
-//   4. Chon "Project > Add New Item" de tao moi file code,
-//      hoac "Project > Add Existing Item" de them file da ton tai vao project nay.
-//   5. Sau nay, de mo lai project nay,
-//      chon "File > Open > Project" va chon file *.sln
-//      Co the xem thu muc project, noi luu file *.sln bang cach
-//      bam phim chuot phai vao "Solution" > chon "Open Folder in File Explorer"
+void lapChucNang(int chonChucNang)
+{
+	int tiepTuc = 1;
+	while (tiepTuc == 1)
+	{
+		switch (chonChucNang)
+		{
+		case 1:
+			kiemTraSoNguyen();
+			break;
+		case 2:
+			uocChungBoiChung();
+			break;
+		case 3:
+			// goi TEN ham CN3
+			break;
+		case 0:
+			return;
+		default:
+			printf("Hay chon lai [0-3]");
+			break;
+		}
 
-// GV: AnhTT184
+		printf("\n");
+		printf("Tiep tuc CN nay? [1=Co | 0=Khong]: ");
+		scanf("%d", &tiepTuc);
+		system("cls");
+	}
+}
+
+int main()
+{
+	int chonChucNang;
+	do
+	{
+		printf("Menu");
+		printf("\n");
+		printf("1. Kiem Tra So Nguyen");
+		printf("\n");
+		printf("2. TEN chuc nang 2");
+		printf("\n");
+		printf("3. TEN chuc nang 3");
+		printf("\n");
+		printf("Hay chon CN [0-3]: ");
+		scanf("%d", &chonChucNang);
+		lapChucNang(chonChucNang);
+	} while (chonChucNang != 0);
+}
