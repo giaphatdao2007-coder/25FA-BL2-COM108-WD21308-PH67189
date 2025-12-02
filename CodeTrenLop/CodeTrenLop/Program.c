@@ -240,8 +240,32 @@ void sapxepphantumang1chieu()
         printf("mang[%d]=%d\n", i, intergerarray[i]);
     }
 }
+void mang2chieu()
+{
+    int array[2][3];
+    for (int i = 0; i < 2; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            printf("Mang tai vi tri[%d][%d]= ", i, j);
+            scanf("%d", &array[i][j]);
+        }
+    }
+    for (int i = 0; i < 2; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            printf("%d", array[i][j]);
 
-int main()
+        }
+        printf("\n");
+    }
+}
+
+
+
+
+main()
 {
     int chon;
 
@@ -255,7 +279,8 @@ int main()
         printf("5. vonglapgoto"); printf("\n");
         printf("6. vonglapfor"); printf("\n");
         printf("7. demo mang 1 chiều"); printf("\n");
-        printf("8. xap xep vong lap"); printf("\n");
+        printf("8.xap xep mang 1 chieu "); printf("\n");
+        printf("9.mang 2 chieu "); printf("\n");
         printf("0.thoat"); printf("\n");
         printf("chon chuc nang tren menu :");
         scanf("%d", &chon);
@@ -285,6 +310,9 @@ int main()
             break;
         case 8:
             sapxepphantumang1chieu();
+            break;
+        case 9:
+            mang2chieu();
             break;
         case 0:
             printf("thoat");
