@@ -33,8 +33,69 @@ void kiemTraSoNguyen()
 
 void uocChungBoiChung()
 {
-	printf("Uoc Chung Boi Chung");
+		int x, y;
+		printf("Nhap x: ");
+		scanf("%d", &x);
+		printf("Nhap y: ");
+		scanf("%d", &y);
+
+		int a = x;
+		int b = y;
+
+		// Tim UCLN bang cach tru dan
+		while (a != b) {
+			if (a > b) {
+				a = a - b;
+			}
+			else {
+				b = b - a;
+			}
+		}
+
+		int ucln = a;                 // luc nay a == b chinh la UCLN
+		int bcnn = (x * y) / ucln;    // cong thuc BCNN
+
+		printf("UCLN cua %d va %d = %d\n", x, y, ucln);
+		printf("BCNN cua %d va %d = %d\n", x, y, bcnn);
+
+		return 0;
+	}
+
+void tinhtienhatkaraoke()
+{
+	int start, end;
+	printf("Nhap gio bat dau: ");// từ 12h đến23h
+	scanf("%d", &start);
+	printf("Nhap gio ket thuc: "); //12 đến 23
+	scanf("%d", &end);
+
+	// Kiem tra gio hop le
+	if (start < 12 || end > 23 || start >= end) {
+		printf("Gio khong hop le!\n");
+		return 0;
+	}
+
+	int gio = end - start;
+	float tien = 0;
+
+	if (gio <= 3) {
+		tien = gio * 50000;          // 3 gio dau: 50k 1gio
+	}
+ else {
+  tien = 3 * 50000;            // 3 gio dau = 150k
+  tien = tien + (gio - 3) * 35000;  // cac gio sau 35k / gio (giam 30%)
 }
+
+	// Giam them 10% neu bat dau tu 14h den 17h
+	if (start >= 14 && start <= 17) {
+		tien = tien * 0.9;
+	}
+
+	printf("Tong tien phai tra: %.0f VND\n", tien);
+
+	return 0;
+}
+
 
 void lapChucNang(int chonChucNang)
 {
@@ -50,7 +111,7 @@ void lapChucNang(int chonChucNang)
 			uocChungBoiChung();
 			break;
 		case 3:
-			// goi TEN ham CN3
+			tinhtienhatkaraoke();
 			break;
 		case 0:
 			return;
@@ -75,9 +136,9 @@ int main()
 		printf("\n");
 		printf("1. Kiem Tra So Nguyen");
 		printf("\n");
-		printf("2. TEN chuc nang 2");
+		printf("2. kiemTraSoNguyen");
 		printf("\n");
-		printf("3. TEN chuc nang 3");
+		printf("3. tinhtienhatkaraoke");
 		printf("\n");
 		printf("Hay chon CN [0-3]: ");
 		scanf("%d", &chonChucNang);
