@@ -247,6 +247,10 @@ void mang2chieu()
     for (int i = 0;  i < 3; i++)
     {
         scanf(" %c", &MangkyTu[i]);
+        if (MangkyTu[i] == '.')// de dung vong lap
+        {
+            break;
+        }
     }
 	//fgets(MangkyTu);
     for (int i = 0;  i < 3; i++)
