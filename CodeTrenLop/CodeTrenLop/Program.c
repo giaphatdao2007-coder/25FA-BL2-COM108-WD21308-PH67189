@@ -242,6 +242,22 @@ void sapxepphantumang1chieu()
 }
 void mang2chieu()
 {
+	// string mảng 2 chiều kiểu chuỗi ( phải dùng < string.h> )
+    char MangkyTu[10] = "Nam";// kieukhaibaoco2ngoactren"name"cothểkhaibaonhieukytu
+    for (int i = 0;  i < 3; i++)
+    {
+        scanf(" %c", &MangkyTu[i]);
+    }
+	//fgets(MangkyTu);
+    for (int i = 0;  i < 3; i++)
+    {
+        printf("%c", MangkyTu[i]);
+    }
+    //puts(MangkyTu);// thay thế mảng for thứ 2
+    
+    
+    
+    
     int array[2][3];
     for (int i = 0; i < 2; i++)
     {
