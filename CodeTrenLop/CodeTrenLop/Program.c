@@ -1,5 +1,6 @@
 ﻿#include <stdio.h>
 #include <math.h>
+#include <string.h>
 void TinhToanCoBan()
 { //khai bao
     double sothuc;
@@ -281,6 +282,56 @@ void mang2chieu()
         printf("\n");
     }
 }
+void mangstringthem()
+{
+    // string mảng 2 chiều kiểu chuỗi ( phải dùng < string.h> )
+    char mangkytu[50];
+    while (getchar() != '\n');
+    fgets(mangkytu, sizeof(mangkytu), stdin);
+    printf("nhap du lieu ");
+    printf("\n");
+    // puts (mangkytu);
+
+    printf("string length"); //( phải mở < string.h> ) //strlen để đếm ký tự chuỗi
+    printf("%d", strlen(mangkytu - 1));//-1 bỏ ky tự xuống dòng
+    printf("\n");
+    printf("string compare the same as"); //( phải mở < string.h> ) //strcmp để so sánh chuỗi
+    printf("%d", strcmp("aBc", "aBc"));// nếu trả về 0 là bằng nhau
+    printf("\n");
+    printf("string compare less than");
+    printf("%d", strcmp("A", "C"));// nếu trả về âm là chuỗi 1 khác chuỗi 2
+    printf("\n");
+	printf("string reverse(DEcryption");// decryption để mã hóa
+    printf("%s", strrev(mangkytu));
+    printf("\n");
+    printf("string reverse(Encryption");// decryption để giải mã hóa
+    printf("%s", strrev(mangkytu));
+    printf("\n");
+	printf("strin Upper:");// viết hoa tất cả ký tự
+    printf("%s", strupr(mangkytu));
+    printf("\n");
+    printf("strin Lower:");// viết thường tất cả ký tự
+    printf("%s", strlwr(mangkytu));
+    printf("\n");
+	printf("print string in string:");// tìm chuỗi con trong chuỗi mẹ
+    
+    if (strstr(mangkytu,"A"!=NULL))
+    {
+        printf("found:");
+		printf("%s", strstr(mangkytu, "A"));
+    }
+    else
+    {
+		printf("not found");
+    }
+	printf("\n");
+
+
+    /*/printf("string reverse:"); //( phải mở < string.h> ) //strrev để đảo ngược chuỗi
+    printf("%S", strrev(mangkytu));
+	printf("\n");/**/
+
+}
 
 
 
@@ -301,6 +352,7 @@ main()
         printf("7. demo mang 1 chiều"); printf("\n");
         printf("8.xap xep mang 1 chieu "); printf("\n");
         printf("9.mang 2 chieu "); printf("\n");
+        printf("10.mang string "); printf("\n");
         printf("0.thoat"); printf("\n");
         printf("chon chuc nang tren menu :");
         scanf("%d", &chon);
@@ -333,6 +385,9 @@ main()
             break;
         case 9:
             mang2chieu();
+            break;
+        case 10:
+            mangstringthem();
             break;
         case 0:
             printf("thoat");
