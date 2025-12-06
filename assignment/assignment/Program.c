@@ -469,11 +469,11 @@ void chiaphanso()
 		printf("\n");
 		printf("7. vay tien mua xe ");
 		printf("\n");
-		printf("8. ");
+		printf("8.sapXepSinhVien ");
 		printf("\n");
-		printf("9. ");
+		printf("9.Fpolygame ");
 		printf("\n");
-		printf("10. ");
+		printf("10.chiaphanso ");
 		printf("\n");
 		printf("Hay chon CN [0-10]: ");
 		scanf("%d", &chonChucNang);
